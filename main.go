@@ -62,16 +62,16 @@ type AddressBreakdown struct {
 	City            string `json:"city" example:"Warszawa"`
 	District        string `json:"district" example:""`
 	Town            string `json:"town" example:"Warszawa"`
-	Postcode        string `json:"postcode" example:"01237"`
+	Postcode        string `json:"postcode" example:"51120"`
 	DetailedAddress string `json:"detailed_address" example:"Ordona 7B Warszawa"`
 	AdditionalInfo  string `json:"additional_info" example:""`
-	FullAddress     string `json:"full_address" example:"Ordona 7B Warszawa, Warszawa, 01237"`
+	FullAddress     string `json:"full_address" example:"Ordona 7B Warszawa, Warszawa, 51120"`
 }
 
 type InvoiceDetail struct {
 	Name             string           `json:"name" example:"Kevin Yap"`
 	Email            string           `json:"email" example:"testing.just@op.pl"`
-	Address          string           `json:"address" example:"Ordona 7B Warszawa, Warszawa, 01237"`
+	Address          string           `json:"address" example:"Ordona 7B Warszawa, Warszawa, 51120"`
 	PhoneNumber      string           `json:"phone_number" example:"0886761062"`
 	TaxID            string           `json:"tax_id" example:"0745561010054"`
 	AddressBreakdown AddressBreakdown `json:"address_breakdown"`
@@ -425,7 +425,7 @@ func getBuyerInvoiceInfo(c *fiber.Ctx) error {
 				InvoiceDetail: InvoiceDetail{
 					Name:        "Kevin Yap",
 					Email:       "testing.just@op.pl",
-					Address:     "Ordona 7B Warszawa, Warszawa, 01237",
+					Address:     "Ordona 7B Warszawa, Warszawa, 51120",
 					PhoneNumber: "",
 					TaxID:       "0745561010054",
 					AddressBreakdown: AddressBreakdown{
@@ -434,10 +434,10 @@ func getBuyerInvoiceInfo(c *fiber.Ctx) error {
 						City:            "Warszawa",
 						District:        "",
 						Town:            "Warszawa",
-						Postcode:        "01237",
+						Postcode:        "51120",
 						DetailedAddress: "Ordona 7B Warszawa",
 						AdditionalInfo:  "",
-						FullAddress:     "Ordona 7B Warszawa, Warszawa, 01237",
+						FullAddress:     "Ordona 7B Warszawa, Warszawa, 51120",
 					},
 				},
 				IsRequested: false,

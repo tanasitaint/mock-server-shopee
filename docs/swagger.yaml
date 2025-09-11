@@ -15,10 +15,10 @@ definitions:
         example: ""
         type: string
       full_address:
-        example: Ordona 7B Warszawa, Warszawa, 01237
+        example: Ordona 7B Warszawa, Warszawa, 51120
         type: string
       postcode:
-        example: "01237"
+        example: "51120"
         type: string
       region:
         example: Poland
@@ -204,7 +204,7 @@ definitions:
   main.InvoiceDetail:
     properties:
       address:
-        example: Ordona 7B Warszawa, Warszawa, 01237
+        example: Ordona 7B Warszawa, Warszawa, 51120
         type: string
       address_breakdown:
         $ref: "#/definitions/main.AddressBreakdown"

@@ -331,11 +331,11 @@ const docTemplate = `{
                 },
                 "full_address": {
                     "type": "string",
-                    "example": "Ordona 7B Warszawa, Warszawa, 01237"
+                    "example": "Ordona 7B Warszawa, Warszawa, 51120"
                 },
                 "postcode": {
                     "type": "string",
-                    "example": "01237"
+                    "example": "51120"
                 },
                 "region": {
                     "type": "string",
@@ -602,7 +602,7 @@ const docTemplate = `{
             "properties": {
                 "address": {
                     "type": "string",
-                    "example": "Ordona 7B Warszawa, Warszawa, 01237"
+                    "example": "Ordona 7B Warszawa, Warszawa, 51120"
                 },
                 "address_breakdown": {
                     "$ref": "#/definitions/main.AddressBreakdown"
