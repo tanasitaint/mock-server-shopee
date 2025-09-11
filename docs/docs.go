@@ -1015,7 +1015,7 @@ const docTemplate = `{
                 },
                 "item_name": {
                     "type": "string",
-                    "example": "🦋giảm giá🦋Kem nở ngực SADOER enlarging breast cream"
+                    "example": "Minecraft NFA"
                 },
                 "item_sku": {
                     "type": "string",
