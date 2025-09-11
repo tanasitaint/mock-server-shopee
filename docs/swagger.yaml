@@ -500,8 +500,7 @@ definitions:
         example: 23620853561
         type: integer
       item_name:
-        example: "\U0001F98Bgiảm giá\U0001F98BKem nở ngực SADOER enlarging breast
-          cream"
+        example: "Minecraft NFA"
         type: string
       item_sku:
         example: ""
