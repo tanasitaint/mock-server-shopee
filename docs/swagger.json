@@ -1,0 +1,1390 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "A mock server for Shopee API endpoints",
+        "title": "Shopee API Mock Server",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:3001",
+    "basePath": "/",
+    "paths": {
+        "/api/v2/order/get_buyer_invoice_info": {
+            "post": {
+                "description": "Retrieves buyer invoice information for a specific order",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Get buyer invoice information",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 123456,
+                        "description": "Partner ID",
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 789012,
+                        "description": "Shop ID",
+                        "name": "shop_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1640995200,
+                        "description": "Request timestamp",
+                        "name": "timestamp",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "example": "\"your_access_token\"",
+                        "description": "Access token",
+                        "name": "access_token",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "example": "\"ABCD1234567890EFGH\"",
+                        "description": "Signature",
+                        "name": "sign",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "description": "Request body with queries array",
+                        "name": "request",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/main.GetBuyerInvoiceInfoRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success response",
+                        "schema": {
+                            "$ref": "#/definitions/main.GetBuyerInvoiceInfoResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/main.GetBuyerInvoiceInfoResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v2/order/get_order_detail": {
+            "get": {
+                "description": "Retrieves detailed information about orders",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Order"
+                ],
+                "summary": "Get order details",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "example": "\"201214JAJXU6G7,201214JASXYXY6\"",
+                        "description": "Comma-separated list of order serial numbers",
+                        "name": "order_sn_list",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 123456,
+                        "description": "Partner ID",
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 789012,
+                        "description": "Shop ID",
+                        "name": "shop_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1640995200,
+                        "description": "Request timestamp",
+                        "name": "timestamp",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "example": "\"your_access_token\"",
+                        "description": "Access token",
+                        "name": "access_token",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "example": "\"ABCD1234567890EFGH\"",
+                        "description": "Signature",
+                        "name": "sign",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "example": true,
+                        "description": "Request pending order status",
+                        "name": "request_order_status_pending",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "example": "\"total_amount\"",
+                        "description": "Optional response fields",
+                        "name": "response_optional_fields",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success response",
+                        "schema": {
+                            "$ref": "#/definitions/main.GetOrderDetailResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/main.GetOrderDetailResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/api/v2/product/get_item_base_info": {
+            "get": {
+                "description": "Retrieves detailed information about products",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Get item base information",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "example": "\"[34001,34002]\"",
+                        "description": "Array of item IDs",
+                        "name": "item_id_list",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "boolean",
+                        "example": true,
+                        "description": "Include tax info in response",
+                        "name": "need_tax_info",
+                        "in": "query"
+                    },
+                    {
+                        "type": "boolean",
+                        "example": true,
+                        "description": "Include complaint policy in response",
+                        "name": "need_complaint_policy",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 123456,
+                        "description": "Partner ID",
+                        "name": "partner_id",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 789012,
+                        "description": "Shop ID",
+                        "name": "shop_id",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1640995200,
+                        "description": "Request timestamp",
+                        "name": "timestamp",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "example": "\"your_access_token\"",
+                        "description": "Access token",
+                        "name": "access_token",
+                        "in": "query",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "example": "\"ABCD1234567890EFGH\"",
+                        "description": "Signature",
+                        "name": "sign",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success response",
+                        "schema": {
+                            "$ref": "#/definitions/main.GetItemBaseInfoResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request",
+                        "schema": {
+                            "$ref": "#/definitions/main.GetItemBaseInfoResponse"
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthorized",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "main.AddressBreakdown": {
+            "type": "object",
+            "properties": {
+                "additional_info": {
+                    "type": "string",
+                    "example": ""
+                },
+                "city": {
+                    "type": "string",
+                    "example": "Warszawa"
+                },
+                "detailed_address": {
+                    "type": "string",
+                    "example": "Ordona 7B Warszawa"
+                },
+                "district": {
+                    "type": "string",
+                    "example": ""
+                },
+                "full_address": {
+                    "type": "string",
+                    "example": "Ordona 7B Warszawa, Warszawa, 01237"
+                },
+                "postcode": {
+                    "type": "string",
+                    "example": "01237"
+                },
+                "region": {
+                    "type": "string",
+                    "example": "Poland"
+                },
+                "state": {
+                    "type": "string",
+                    "example": ""
+                },
+                "town": {
+                    "type": "string",
+                    "example": "Warszawa"
+                }
+            }
+        },
+        "main.Attribute": {
+            "type": "object",
+            "properties": {
+                "attribute_id": {
+                    "type": "integer",
+                    "example": 4811
+                },
+                "attribute_value_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.AttributeValue"
+                    }
+                },
+                "is_mandatory": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "original_attribute_name": {
+                    "type": "string",
+                    "example": "Brand: L2 Default [14644]"
+                }
+            }
+        },
+        "main.AttributeValue": {
+            "type": "object",
+            "properties": {
+                "original_value_name": {
+                    "type": "string",
+                    "example": "Default"
+                },
+                "value_id": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "value_unit": {
+                    "type": "string",
+                    "example": "g"
+                }
+            }
+        },
+        "main.Brand": {
+            "type": "object",
+            "properties": {
+                "brand_id": {
+                    "type": "integer",
+                    "example": 123
+                },
+                "original_brand_name": {
+                    "type": "string",
+                    "example": "nike"
+                }
+            }
+        },
+        "main.ComplaintPolicy": {
+            "type": "object",
+            "properties": {
+                "additional_information": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "complaint_address_id": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "exclude_entrepreneur_warranty": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "warranty_time": {
+                    "type": "string",
+                    "example": "ONE_YEAR"
+                }
+            }
+        },
+        "main.DescriptionField": {
+            "type": "object",
+            "properties": {
+                "field_type": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "image_info": {
+                    "$ref": "#/definitions/main.DescriptionFieldImage"
+                },
+                "text": {
+                    "type": "string",
+                    "example": "-"
+                }
+            }
+        },
+        "main.DescriptionFieldImage": {
+            "type": "object",
+            "properties": {
+                "image_id": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "image_url": {
+                    "type": "string",
+                    "example": "-"
+                }
+            }
+        },
+        "main.DescriptionInfo": {
+            "type": "object",
+            "properties": {
+                "extended_description": {
+                    "$ref": "#/definitions/main.ExtendedDescription"
+                }
+            }
+        },
+        "main.Dimension": {
+            "type": "object",
+            "properties": {
+                "package_height": {
+                    "type": "integer",
+                    "example": 13
+                },
+                "package_length": {
+                    "type": "integer",
+                    "example": 11
+                },
+                "package_width": {
+                    "type": "integer",
+                    "example": 12
+                }
+            }
+        },
+        "main.ExtendedDescription": {
+            "type": "object",
+            "properties": {
+                "field_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.DescriptionField"
+                    }
+                }
+            }
+        },
+        "main.GetBuyerInvoiceInfoRequest": {
+            "type": "object",
+            "properties": {
+                "access_token": {
+                    "type": "string",
+                    "example": "your_access_token"
+                },
+                "partner_id": {
+                    "type": "integer",
+                    "example": 123456
+                },
+                "queries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.QueryItem"
+                    }
+                },
+                "shop_id": {
+                    "type": "integer",
+                    "example": 789012
+                },
+                "sign": {
+                    "type": "string",
+                    "example": "ABCD1234567890EFGH"
+                },
+                "timestamp": {
+                    "type": "integer",
+                    "example": 1640995200
+                }
+            }
+        },
+        "main.GetBuyerInvoiceInfoResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string",
+                    "example": ""
+                },
+                "invoice_info_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.InvoiceInfo"
+                    }
+                },
+                "message": {
+                    "type": "string",
+                    "example": ""
+                },
+                "request_id": {
+                    "type": "string",
+                    "example": "a2c45ca2683caf1651ecab5a4d5942ce"
+                }
+            }
+        },
+        "main.GetItemBaseInfoResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "message": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "request_id": {
+                    "type": "string",
+                    "example": "7b9da0c6926642199c33ee9dd3a266f5"
+                },
+                "response": {
+                    "$ref": "#/definitions/main.ItemListResponse"
+                },
+                "warning": {
+                    "type": "string",
+                    "example": "-"
+                }
+            }
+        },
+        "main.GetOrderDetailResponse": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string",
+                    "example": ""
+                },
+                "message": {
+                    "type": "string",
+                    "example": ""
+                },
+                "request_id": {
+                    "type": "string",
+                    "example": "023c50ace933ba38473a5fb2a7dc8821"
+                },
+                "response": {
+                    "$ref": "#/definitions/main.OrderListResponse"
+                }
+            }
+        },
+        "main.ImageInfo": {
+            "type": "object",
+            "properties": {
+                "image_url": {
+                    "type": "string",
+                    "example": "https://cf.shopee.vn/file/vn-11134207-7qukw-lf6guphtf6oad3_tn"
+                }
+            }
+        },
+        "main.InvoiceDetail": {
+            "type": "object",
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "example": "Ordona 7B Warszawa, Warszawa, 01237"
+                },
+                "address_breakdown": {
+                    "$ref": "#/definitions/main.AddressBreakdown"
+                },
+                "email": {
+                    "type": "string",
+                    "example": "testing.just@op.pl"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "Kevin Yap"
+                },
+                "phone_number": {
+                    "type": "string",
+                    "example": ""
+                },
+                "tax_id": {
+                    "type": "string",
+                    "example": ""
+                }
+            }
+        },
+        "main.InvoiceInfo": {
+            "type": "object",
+            "properties": {
+                "error": {
+                    "type": "string",
+                    "example": ""
+                },
+                "invoice_detail": {
+                    "$ref": "#/definitions/main.InvoiceDetail"
+                },
+                "invoice_type": {
+                    "type": "string",
+                    "example": "personal"
+                },
+                "is_requested": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "order_sn": {
+                    "type": "string",
+                    "example": "2209160VNPKXF7"
+                }
+            }
+        },
+        "main.ItemDetail": {
+            "type": "object",
+            "properties": {
+                "attribute_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.Attribute"
+                    }
+                },
+                "brand": {
+                    "$ref": "#/definitions/main.Brand"
+                },
+                "category_id": {
+                    "type": "integer",
+                    "example": 14646
+                },
+                "complaint_policy": {
+                    "$ref": "#/definitions/main.ComplaintPolicy"
+                },
+                "condition": {
+                    "type": "string",
+                    "example": "NEW/USED"
+                },
+                "create_time": {
+                    "type": "integer",
+                    "example": 1600572637
+                },
+                "deboost": {
+                    "type": "string",
+                    "example": "false"
+                },
+                "description": {
+                    "type": "string",
+                    "example": "first product 001first product"
+                },
+                "description_info": {
+                    "$ref": "#/definitions/main.DescriptionInfo"
+                },
+                "description_type": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "dimension": {
+                    "$ref": "#/definitions/main.Dimension"
+                },
+                "has_model": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "image": {
+                    "$ref": "#/definitions/main.ItemImage"
+                },
+                "item_dangerous": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "item_id": {
+                    "type": "integer",
+                    "example": 34002
+                },
+                "item_name": {
+                    "type": "string",
+                    "example": "seller discount"
+                },
+                "item_sku": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "item_status": {
+                    "type": "string",
+                    "example": "NORMAL"
+                },
+                "logistic_info": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.LogisticInfo"
+                    }
+                },
+                "pre_order": {
+                    "$ref": "#/definitions/main.PreOrder"
+                },
+                "price_info": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.PriceInfo"
+                    }
+                },
+                "promotion_id": {
+                    "type": "integer",
+                    "example": 13123
+                },
+                "size_chart": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "stock_info_v2": {
+                    "$ref": "#/definitions/main.StockInfoV2"
+                },
+                "tax_info": {
+                    "$ref": "#/definitions/main.TaxInfo"
+                },
+                "update_time": {
+                    "type": "integer",
+                    "example": 1600572640
+                },
+                "video_info": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.VideoInfo"
+                    }
+                },
+                "weight": {
+                    "type": "string",
+                    "example": "10.02"
+                },
+                "wholesales": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.Wholesale"
+                    }
+                }
+            }
+        },
+        "main.ItemImage": {
+            "type": "object",
+            "properties": {
+                "image_id_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "-"
+                    ]
+                },
+                "image_url_list": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "-"
+                    ]
+                }
+            }
+        },
+        "main.ItemListResponse": {
+            "type": "object",
+            "properties": {
+                "item_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.ItemDetail"
+                    }
+                }
+            }
+        },
+        "main.LogisticInfo": {
+            "type": "object",
+            "properties": {
+                "enabled": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "estimated_shipping_fee": {
+                    "type": "number",
+                    "example": 4.02
+                },
+                "is_free": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "logistic_id": {
+                    "type": "integer",
+                    "example": 80012
+                },
+                "logistic_name": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "shipping_fee": {
+                    "type": "number",
+                    "example": 5.02
+                },
+                "size_id": {
+                    "type": "integer",
+                    "example": 0
+                }
+            }
+        },
+        "main.OrderDetail": {
+            "type": "object",
+            "properties": {
+                "actual_shipping_fee_confirmed": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "buyer_cancel_reason": {
+                    "type": "string",
+                    "example": ""
+                },
+                "buyer_cpf_id": {
+                    "type": "string",
+                    "example": "null"
+                },
+                "buyer_user_id": {
+                    "type": "integer",
+                    "example": 1170319091
+                },
+                "buyer_username": {
+                    "type": "string",
+                    "example": "xt4fdsf96j"
+                },
+                "cancel_by": {
+                    "type": "string",
+                    "example": ""
+                },
+                "cancel_reason": {
+                    "type": "string",
+                    "example": ""
+                },
+                "cod": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "create_time": {
+                    "type": "integer",
+                    "example": 1712601591
+                },
+                "currency": {
+                    "type": "string",
+                    "example": "VND"
+                },
+                "days_to_ship": {
+                    "type": "integer",
+                    "example": 2
+                },
+                "dropshipper": {
+                    "type": "string",
+                    "example": "null"
+                },
+                "dropshipper_phone": {
+                    "type": "string",
+                    "example": "null"
+                },
+                "estimated_shipping_fee": {
+                    "type": "integer",
+                    "example": 5000
+                },
+                "fulfillment_flag": {
+                    "type": "string",
+                    "example": "fulfilled_by_local_seller"
+                },
+                "goods_to_declare": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "invoice_data": {
+                    "type": "string",
+                    "example": "null"
+                },
+                "item_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.OrderItem"
+                    }
+                },
+                "message_to_seller": {
+                    "type": "string",
+                    "example": ""
+                },
+                "note": {
+                    "type": "string",
+                    "example": ""
+                },
+                "note_update_time": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "order_sn": {
+                    "type": "string",
+                    "example": "2404098R48U37H"
+                },
+                "order_status": {
+                    "type": "string",
+                    "example": "COMPLETED"
+                },
+                "package_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.PackageDetail"
+                    }
+                },
+                "pay_time": {
+                    "type": "integer",
+                    "example": 1712817766
+                },
+                "payment_method": {
+                    "type": "string",
+                    "example": "Cash on Delivery"
+                },
+                "pickup_done_time": {
+                    "type": "integer",
+                    "example": 1712726577
+                },
+                "recipient_address": {
+                    "$ref": "#/definitions/main.RecipientAddress"
+                },
+                "region": {
+                    "type": "string",
+                    "example": "VN"
+                },
+                "reverse_shipping_fee": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "ship_by_date": {
+                    "type": "integer",
+                    "example": 1712671200
+                },
+                "shipping_carrier": {
+                    "type": "string",
+                    "example": "Giao Hàng Nhanh"
+                },
+                "split_up": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "total_amount": {
+                    "type": "integer",
+                    "example": 32119
+                },
+                "update_time": {
+                    "type": "integer",
+                    "example": 1713139948
+                }
+            }
+        },
+        "main.OrderItem": {
+            "type": "object",
+            "properties": {
+                "add_on_deal": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "add_on_deal_id": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "image_info": {
+                    "$ref": "#/definitions/main.ImageInfo"
+                },
+                "is_b2c_owned_item": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "is_prescription_item": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "item_id": {
+                    "type": "integer",
+                    "example": 23620853561
+                },
+                "item_name": {
+                    "type": "string",
+                    "example": "🦋giảm giá🦋Kem nở ngực SADOER enlarging breast cream"
+                },
+                "item_sku": {
+                    "type": "string",
+                    "example": ""
+                },
+                "main_item": {
+                    "type": "boolean",
+                    "example": false
+                },
+                "model_discounted_price": {
+                    "type": "integer",
+                    "example": 48000
+                },
+                "model_id": {
+                    "type": "integer",
+                    "example": 221404189791
+                },
+                "model_name": {
+                    "type": "string",
+                    "example": "60g（Papaya）"
+                },
+                "model_original_price": {
+                    "type": "integer",
+                    "example": 300000
+                },
+                "model_quantity_purchased": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "model_sku": {
+                    "type": "string",
+                    "example": "QAZ-SADOER-05"
+                },
+                "order_item_id": {
+                    "type": "integer",
+                    "example": 23620853561
+                },
+                "product_location_id": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "example": [
+                        "VN10XX2UZ"
+                    ]
+                },
+                "promotion_group_id": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "promotion_id": {
+                    "type": "integer",
+                    "example": 779222207758537
+                },
+                "promotion_type": {
+                    "type": "string",
+                    "example": "flash_sale"
+                },
+                "weight": {
+                    "type": "number",
+                    "example": 0.01
+                },
+                "wholesale": {
+                    "type": "boolean",
+                    "example": false
+                }
+            }
+        },
+        "main.OrderListResponse": {
+            "type": "object",
+            "properties": {
+                "order_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.OrderDetail"
+                    }
+                }
+            }
+        },
+        "main.PackageDetail": {
+            "type": "object",
+            "properties": {
+                "allow_self_design_awb": {
+                    "type": "boolean",
+                    "example": true
+                },
+                "group_shipment_id": {
+                    "type": "string",
+                    "example": "null"
+                },
+                "item_list": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.PackageItemDetail"
+                    }
+                },
+                "logistics_channel_id": {
+                    "type": "integer",
+                    "example": 18080
+                },
+                "logistics_status": {
+                    "type": "string",
+                    "example": "LOGISTICS_DELIVERY_DONE"
+                },
+                "package_number": {
+                    "type": "string",
+                    "example": "OFG166300791210964"
+                },
+                "parcel_chargeable_weight_gram": {
+                    "type": "integer",
+                    "example": 10
+                },
+                "shipping_carrier": {
+                    "type": "string",
+                    "example": "5-Day Delivery (SPX)"
+                },
+                "sorting_group": {
+                    "type": "string",
+                    "example": "North"
+                }
+            }
+        },
+        "main.PackageItemDetail": {
+            "type": "object",
+            "properties": {
+                "item_id": {
+                    "type": "integer",
+                    "example": 23620853561
+                },
+                "model_id": {
+                    "type": "integer",
+                    "example": 221404189791
+                },
+                "model_quantity": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "order_item_id": {
+                    "type": "integer",
+                    "example": 23620853561
+                },
+                "product_location_id": {
+                    "type": "string",
+                    "example": "VN10XX2UZ"
+                },
+                "promotion_group_id": {
+                    "type": "integer",
+                    "example": 0
+                }
+            }
+        },
+        "main.PreOrder": {
+            "type": "object",
+            "properties": {
+                "days_to_ship": {
+                    "type": "integer",
+                    "example": 3
+                },
+                "is_pre_order": {
+                    "type": "boolean",
+                    "example": true
+                }
+            }
+        },
+        "main.PriceInfo": {
+            "type": "object",
+            "properties": {
+                "currency": {
+                    "type": "string",
+                    "example": "SGD"
+                },
+                "current_price": {
+                    "type": "number",
+                    "example": 122.02
+                },
+                "inflated_price_of_current_price": {
+                    "type": "number",
+                    "example": 111.02
+                },
+                "inflated_price_of_original_price": {
+                    "type": "number",
+                    "example": 222.02
+                },
+                "original_price": {
+                    "type": "number",
+                    "example": 122.02
+                },
+                "sip_item_price": {
+                    "type": "number",
+                    "example": 100.02
+                },
+                "sip_item_price_source": {
+                    "type": "string",
+                    "example": "auto"
+                }
+            }
+        },
+        "main.QueryItem": {
+            "type": "object",
+            "properties": {
+                "order_sn": {
+                    "type": "string",
+                    "example": "220314U0G6UNMN"
+                }
+            }
+        },
+        "main.RecipientAddress": {
+            "type": "object",
+            "properties": {
+                "city": {
+                    "type": "string",
+                    "example": "Huyện Phước Long"
+                },
+                "district": {
+                    "type": "string",
+                    "example": "Xã Phong Thạnh Tây B"
+                },
+                "full_address": {
+                    "type": "string",
+                    "example": "Ấp******"
+                },
+                "name": {
+                    "type": "string",
+                    "example": "P******n"
+                },
+                "phone": {
+                    "type": "string",
+                    "example": "******64"
+                },
+                "region": {
+                    "type": "string",
+                    "example": "VN"
+                },
+                "state": {
+                    "type": "string",
+                    "example": "Bạc Liêu"
+                },
+                "town": {
+                    "type": "string",
+                    "example": ""
+                },
+                "zipcode": {
+                    "type": "string",
+                    "example": ""
+                }
+            }
+        },
+        "main.StockInfoV2": {
+            "type": "object",
+            "properties": {
+                "seller_stock": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.StockLocation"
+                    }
+                },
+                "shopee_stock": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/main.StockLocation"
+                    }
+                },
+                "summary_info": {
+                    "$ref": "#/definitions/main.SummaryInfo"
+                }
+            }
+        },
+        "main.StockLocation": {
+            "type": "object",
+            "properties": {
+                "location_id": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "stock": {
+                    "type": "integer",
+                    "example": 10
+                }
+            }
+        },
+        "main.SummaryInfo": {
+            "type": "object",
+            "properties": {
+                "total_available_stock": {
+                    "type": "integer",
+                    "example": 100
+                },
+                "total_reserved_stock": {
+                    "type": "integer",
+                    "example": 100
+                }
+            }
+        },
+        "main.TaxInfo": {
+            "type": "object",
+            "properties": {
+                "cest": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "csosn": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "diff_state_cfop": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "hs_code": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "invoice_option": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "measure_unit": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "ncm": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "origin": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "tax_code": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "vat_rate": {
+                    "type": "string",
+                    "example": "-"
+                }
+            }
+        },
+        "main.VideoInfo": {
+            "type": "object",
+            "properties": {
+                "duration": {
+                    "type": "integer",
+                    "example": 0
+                },
+                "thumbnail_url": {
+                    "type": "string",
+                    "example": "-"
+                },
+                "video_url": {
+                    "type": "string",
+                    "example": "-"
+                }
+            }
+        },
+        "main.Wholesale": {
+            "type": "object",
+            "properties": {
+                "inflated_price_of_unit_price": {
+                    "type": "number",
+                    "example": 5.02
+                },
+                "max_count": {
+                    "type": "integer",
+                    "example": 2
+                },
+                "min_count": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "unit_price": {
+                    "type": "number",
+                    "example": 4.02
+                }
+            }
+        }
+    }
+}

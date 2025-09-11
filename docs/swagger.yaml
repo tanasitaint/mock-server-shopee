@@ -1,0 +1,990 @@
+basePath: /
+definitions:
+  main.AddressBreakdown:
+    properties:
+      additional_info:
+        example: ""
+        type: string
+      city:
+        example: Warszawa
+        type: string
+      detailed_address:
+        example: Ordona 7B Warszawa
+        type: string
+      district:
+        example: ""
+        type: string
+      full_address:
+        example: Ordona 7B Warszawa, Warszawa, 01237
+        type: string
+      postcode:
+        example: "01237"
+        type: string
+      region:
+        example: Poland
+        type: string
+      state:
+        example: ""
+        type: string
+      town:
+        example: Warszawa
+        type: string
+    type: object
+  main.Attribute:
+    properties:
+      attribute_id:
+        example: 4811
+        type: integer
+      attribute_value_list:
+        items:
+          $ref: '#/definitions/main.AttributeValue'
+        type: array
+      is_mandatory:
+        example: true
+        type: boolean
+      original_attribute_name:
+        example: 'Brand: L2 Default [14644]'
+        type: string
+    type: object
+  main.AttributeValue:
+    properties:
+      original_value_name:
+        example: Default
+        type: string
+      value_id:
+        example: 0
+        type: integer
+      value_unit:
+        example: g
+        type: string
+    type: object
+  main.Brand:
+    properties:
+      brand_id:
+        example: 123
+        type: integer
+      original_brand_name:
+        example: nike
+        type: string
+    type: object
+  main.ComplaintPolicy:
+    properties:
+      additional_information:
+        example: '-'
+        type: string
+      complaint_address_id:
+        example: 0
+        type: integer
+      exclude_entrepreneur_warranty:
+        example: true
+        type: boolean
+      warranty_time:
+        example: ONE_YEAR
+        type: string
+    type: object
+  main.DescriptionField:
+    properties:
+      field_type:
+        example: '-'
+        type: string
+      image_info:
+        $ref: '#/definitions/main.DescriptionFieldImage'
+      text:
+        example: '-'
+        type: string
+    type: object
+  main.DescriptionFieldImage:
+    properties:
+      image_id:
+        example: '-'
+        type: string
+      image_url:
+        example: '-'
+        type: string
+    type: object
+  main.DescriptionInfo:
+    properties:
+      extended_description:
+        $ref: '#/definitions/main.ExtendedDescription'
+    type: object
+  main.Dimension:
+    properties:
+      package_height:
+        example: 13
+        type: integer
+      package_length:
+        example: 11
+        type: integer
+      package_width:
+        example: 12
+        type: integer
+    type: object
+  main.ExtendedDescription:
+    properties:
+      field_list:
+        items:
+          $ref: '#/definitions/main.DescriptionField'
+        type: array
+    type: object
+  main.GetBuyerInvoiceInfoRequest:
+    properties:
+      access_token:
+        example: your_access_token
+        type: string
+      partner_id:
+        example: 123456
+        type: integer
+      queries:
+        items:
+          $ref: '#/definitions/main.QueryItem'
+        type: array
+      shop_id:
+        example: 789012
+        type: integer
+      sign:
+        example: ABCD1234567890EFGH
+        type: string
+      timestamp:
+        example: 1640995200
+        type: integer
+    type: object
+  main.GetBuyerInvoiceInfoResponse:
+    properties:
+      error:
+        example: ""
+        type: string
+      invoice_info_list:
+        items:
+          $ref: '#/definitions/main.InvoiceInfo'
+        type: array
+      message:
+        example: ""
+        type: string
+      request_id:
+        example: a2c45ca2683caf1651ecab5a4d5942ce
+        type: string
+    type: object
+  main.GetItemBaseInfoResponse:
+    properties:
+      error:
+        example: '-'
+        type: string
+      message:
+        example: '-'
+        type: string
+      request_id:
+        example: 7b9da0c6926642199c33ee9dd3a266f5
+        type: string
+      response:
+        $ref: '#/definitions/main.ItemListResponse'
+      warning:
+        example: '-'
+        type: string
+    type: object
+  main.GetOrderDetailResponse:
+    properties:
+      error:
+        example: ""
+        type: string
+      message:
+        example: ""
+        type: string
+      request_id:
+        example: 023c50ace933ba38473a5fb2a7dc8821
+        type: string
+      response:
+        $ref: '#/definitions/main.OrderListResponse'
+    type: object
+  main.ImageInfo:
+    properties:
+      image_url:
+        example: https://cf.shopee.vn/file/vn-11134207-7qukw-lf6guphtf6oad3_tn
+        type: string
+    type: object
+  main.InvoiceDetail:
+    properties:
+      address:
+        example: Ordona 7B Warszawa, Warszawa, 01237
+        type: string
+      address_breakdown:
+        $ref: '#/definitions/main.AddressBreakdown'
+      email:
+        example: testing.just@op.pl
+        type: string
+      name:
+        example: Kevin Yap
+        type: string
+      phone_number:
+        example: ""
+        type: string
+      tax_id:
+        example: ""
+        type: string
+    type: object
+  main.InvoiceInfo:
+    properties:
+      error:
+        example: ""
+        type: string
+      invoice_detail:
+        $ref: '#/definitions/main.InvoiceDetail'
+      invoice_type:
+        example: personal
+        type: string
+      is_requested:
+        example: false
+        type: boolean
+      order_sn:
+        example: 2209160VNPKXF7
+        type: string
+    type: object
+  main.ItemDetail:
+    properties:
+      attribute_list:
+        items:
+          $ref: '#/definitions/main.Attribute'
+        type: array
+      brand:
+        $ref: '#/definitions/main.Brand'
+      category_id:
+        example: 14646
+        type: integer
+      complaint_policy:
+        $ref: '#/definitions/main.ComplaintPolicy'
+      condition:
+        example: NEW/USED
+        type: string
+      create_time:
+        example: 1600572637
+        type: integer
+      deboost:
+        example: "false"
+        type: string
+      description:
+        example: first product 001first product
+        type: string
+      description_info:
+        $ref: '#/definitions/main.DescriptionInfo'
+      description_type:
+        example: '-'
+        type: string
+      dimension:
+        $ref: '#/definitions/main.Dimension'
+      has_model:
+        example: true
+        type: boolean
+      image:
+        $ref: '#/definitions/main.ItemImage'
+      item_dangerous:
+        example: 0
+        type: integer
+      item_id:
+        example: 34002
+        type: integer
+      item_name:
+        example: seller discount
+        type: string
+      item_sku:
+        example: '-'
+        type: string
+      item_status:
+        example: NORMAL
+        type: string
+      logistic_info:
+        items:
+          $ref: '#/definitions/main.LogisticInfo'
+        type: array
+      pre_order:
+        $ref: '#/definitions/main.PreOrder'
+      price_info:
+        items:
+          $ref: '#/definitions/main.PriceInfo'
+        type: array
+      promotion_id:
+        example: 13123
+        type: integer
+      size_chart:
+        example: '-'
+        type: string
+      stock_info_v2:
+        $ref: '#/definitions/main.StockInfoV2'
+      tax_info:
+        $ref: '#/definitions/main.TaxInfo'
+      update_time:
+        example: 1600572640
+        type: integer
+      video_info:
+        items:
+          $ref: '#/definitions/main.VideoInfo'
+        type: array
+      weight:
+        example: "10.02"
+        type: string
+      wholesales:
+        items:
+          $ref: '#/definitions/main.Wholesale'
+        type: array
+    type: object
+  main.ItemImage:
+    properties:
+      image_id_list:
+        example:
+        - '-'
+        items:
+          type: string
+        type: array
+      image_url_list:
+        example:
+        - '-'
+        items:
+          type: string
+        type: array
+    type: object
+  main.ItemListResponse:
+    properties:
+      item_list:
+        items:
+          $ref: '#/definitions/main.ItemDetail'
+        type: array
+    type: object
+  main.LogisticInfo:
+    properties:
+      enabled:
+        example: true
+        type: boolean
+      estimated_shipping_fee:
+        example: 4.02
+        type: number
+      is_free:
+        example: true
+        type: boolean
+      logistic_id:
+        example: 80012
+        type: integer
+      logistic_name:
+        example: '-'
+        type: string
+      shipping_fee:
+        example: 5.02
+        type: number
+      size_id:
+        example: 0
+        type: integer
+    type: object
+  main.OrderDetail:
+    properties:
+      actual_shipping_fee_confirmed:
+        example: true
+        type: boolean
+      buyer_cancel_reason:
+        example: ""
+        type: string
+      buyer_cpf_id:
+        example: "null"
+        type: string
+      buyer_user_id:
+        example: 1170319091
+        type: integer
+      buyer_username:
+        example: xt4fdsf96j
+        type: string
+      cancel_by:
+        example: ""
+        type: string
+      cancel_reason:
+        example: ""
+        type: string
+      cod:
+        example: true
+        type: boolean
+      create_time:
+        example: 1712601591
+        type: integer
+      currency:
+        example: VND
+        type: string
+      days_to_ship:
+        example: 2
+        type: integer
+      dropshipper:
+        example: "null"
+        type: string
+      dropshipper_phone:
+        example: "null"
+        type: string
+      estimated_shipping_fee:
+        example: 5000
+        type: integer
+      fulfillment_flag:
+        example: fulfilled_by_local_seller
+        type: string
+      goods_to_declare:
+        example: false
+        type: boolean
+      invoice_data:
+        example: "null"
+        type: string
+      item_list:
+        items:
+          $ref: '#/definitions/main.OrderItem'
+        type: array
+      message_to_seller:
+        example: ""
+        type: string
+      note:
+        example: ""
+        type: string
+      note_update_time:
+        example: 0
+        type: integer
+      order_sn:
+        example: 2404098R48U37H
+        type: string
+      order_status:
+        example: COMPLETED
+        type: string
+      package_list:
+        items:
+          $ref: '#/definitions/main.PackageDetail'
+        type: array
+      pay_time:
+        example: 1712817766
+        type: integer
+      payment_method:
+        example: Cash on Delivery
+        type: string
+      pickup_done_time:
+        example: 1712726577
+        type: integer
+      recipient_address:
+        $ref: '#/definitions/main.RecipientAddress'
+      region:
+        example: VN
+        type: string
+      reverse_shipping_fee:
+        example: 0
+        type: integer
+      ship_by_date:
+        example: 1712671200
+        type: integer
+      shipping_carrier:
+        example: Giao Hàng Nhanh
+        type: string
+      split_up:
+        example: false
+        type: boolean
+      total_amount:
+        example: 32119
+        type: integer
+      update_time:
+        example: 1713139948
+        type: integer
+    type: object
+  main.OrderItem:
+    properties:
+      add_on_deal:
+        example: false
+        type: boolean
+      add_on_deal_id:
+        example: 0
+        type: integer
+      image_info:
+        $ref: '#/definitions/main.ImageInfo'
+      is_b2c_owned_item:
+        example: false
+        type: boolean
+      is_prescription_item:
+        example: false
+        type: boolean
+      item_id:
+        example: 23620853561
+        type: integer
+      item_name:
+        example: "\U0001F98Bgiảm giá\U0001F98BKem nở ngực SADOER enlarging breast
+          cream"
+        type: string
+      item_sku:
+        example: ""
+        type: string
+      main_item:
+        example: false
+        type: boolean
+      model_discounted_price:
+        example: 48000
+        type: integer
+      model_id:
+        example: 221404189791
+        type: integer
+      model_name:
+        example: 60g（Papaya）
+        type: string
+      model_original_price:
+        example: 300000
+        type: integer
+      model_quantity_purchased:
+        example: 1
+        type: integer
+      model_sku:
+        example: QAZ-SADOER-05
+        type: string
+      order_item_id:
+        example: 23620853561
+        type: integer
+      product_location_id:
+        example:
+        - VN10XX2UZ
+        items:
+          type: string
+        type: array
+      promotion_group_id:
+        example: 0
+        type: integer
+      promotion_id:
+        example: 779222207758537
+        type: integer
+      promotion_type:
+        example: flash_sale
+        type: string
+      weight:
+        example: 0.01
+        type: number
+      wholesale:
+        example: false
+        type: boolean
+    type: object
+  main.OrderListResponse:
+    properties:
+      order_list:
+        items:
+          $ref: '#/definitions/main.OrderDetail'
+        type: array
+    type: object
+  main.PackageDetail:
+    properties:
+      allow_self_design_awb:
+        example: true
+        type: boolean
+      group_shipment_id:
+        example: "null"
+        type: string
+      item_list:
+        items:
+          $ref: '#/definitions/main.PackageItemDetail'
+        type: array
+      logistics_channel_id:
+        example: 18080
+        type: integer
+      logistics_status:
+        example: LOGISTICS_DELIVERY_DONE
+        type: string
+      package_number:
+        example: OFG166300791210964
+        type: string
+      parcel_chargeable_weight_gram:
+        example: 10
+        type: integer
+      shipping_carrier:
+        example: 5-Day Delivery (SPX)
+        type: string
+      sorting_group:
+        example: North
+        type: string
+    type: object
+  main.PackageItemDetail:
+    properties:
+      item_id:
+        example: 23620853561
+        type: integer
+      model_id:
+        example: 221404189791
+        type: integer
+      model_quantity:
+        example: 1
+        type: integer
+      order_item_id:
+        example: 23620853561
+        type: integer
+      product_location_id:
+        example: VN10XX2UZ
+        type: string
+      promotion_group_id:
+        example: 0
+        type: integer
+    type: object
+  main.PreOrder:
+    properties:
+      days_to_ship:
+        example: 3
+        type: integer
+      is_pre_order:
+        example: true
+        type: boolean
+    type: object
+  main.PriceInfo:
+    properties:
+      currency:
+        example: SGD
+        type: string
+      current_price:
+        example: 122.02
+        type: number
+      inflated_price_of_current_price:
+        example: 111.02
+        type: number
+      inflated_price_of_original_price:
+        example: 222.02
+        type: number
+      original_price:
+        example: 122.02
+        type: number
+      sip_item_price:
+        example: 100.02
+        type: number
+      sip_item_price_source:
+        example: auto
+        type: string
+    type: object
+  main.QueryItem:
+    properties:
+      order_sn:
+        example: 220314U0G6UNMN
+        type: string
+    type: object
+  main.RecipientAddress:
+    properties:
+      city:
+        example: Huyện Phước Long
+        type: string
+      district:
+        example: Xã Phong Thạnh Tây B
+        type: string
+      full_address:
+        example: Ấp******
+        type: string
+      name:
+        example: P******n
+        type: string
+      phone:
+        example: '******64'
+        type: string
+      region:
+        example: VN
+        type: string
+      state:
+        example: Bạc Liêu
+        type: string
+      town:
+        example: ""
+        type: string
+      zipcode:
+        example: ""
+        type: string
+    type: object
+  main.StockInfoV2:
+    properties:
+      seller_stock:
+        items:
+          $ref: '#/definitions/main.StockLocation'
+        type: array
+      shopee_stock:
+        items:
+          $ref: '#/definitions/main.StockLocation'
+        type: array
+      summary_info:
+        $ref: '#/definitions/main.SummaryInfo'
+    type: object
+  main.StockLocation:
+    properties:
+      location_id:
+        example: '-'
+        type: string
+      stock:
+        example: 10
+        type: integer
+    type: object
+  main.SummaryInfo:
+    properties:
+      total_available_stock:
+        example: 100
+        type: integer
+      total_reserved_stock:
+        example: 100
+        type: integer
+    type: object
+  main.TaxInfo:
+    properties:
+      cest:
+        example: '-'
+        type: string
+      csosn:
+        example: '-'
+        type: string
+      diff_state_cfop:
+        example: '-'
+        type: string
+      hs_code:
+        example: '-'
+        type: string
+      invoice_option:
+        example: '-'
+        type: string
+      measure_unit:
+        example: '-'
+        type: string
+      ncm:
+        example: '-'
+        type: string
+      origin:
+        example: '-'
+        type: string
+      tax_code:
+        example: '-'
+        type: string
+      vat_rate:
+        example: '-'
+        type: string
+    type: object
+  main.VideoInfo:
+    properties:
+      duration:
+        example: 0
+        type: integer
+      thumbnail_url:
+        example: '-'
+        type: string
+      video_url:
+        example: '-'
+        type: string
+    type: object
+  main.Wholesale:
+    properties:
+      inflated_price_of_unit_price:
+        example: 5.02
+        type: number
+      max_count:
+        example: 2
+        type: integer
+      min_count:
+        example: 1
+        type: integer
+      unit_price:
+        example: 4.02
+        type: number
+    type: object
+host: localhost:3001
+info:
+  contact: {}
+  description: A mock server for Shopee API endpoints
+  title: Shopee API Mock Server
+  version: "1.0"
+paths:
+  /api/v2/order/get_buyer_invoice_info:
+    post:
+      consumes:
+      - application/json
+      description: Retrieves buyer invoice information for a specific order
+      parameters:
+      - description: Partner ID
+        example: 123456
+        format: int64
+        in: query
+        name: partner_id
+        required: true
+        type: integer
+      - description: Shop ID
+        example: 789012
+        format: int64
+        in: query
+        name: shop_id
+        type: integer
+      - description: Request timestamp
+        example: 1640995200
+        format: int64
+        in: query
+        name: timestamp
+        required: true
+        type: integer
+      - description: Access token
+        example: '"your_access_token"'
+        in: query
+        name: access_token
+        required: true
+        type: string
+      - description: Signature
+        example: '"ABCD1234567890EFGH"'
+        in: query
+        name: sign
+        required: true
+        type: string
+      - description: Request body with queries array
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/main.GetBuyerInvoiceInfoRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success response
+          schema:
+            $ref: '#/definitions/main.GetBuyerInvoiceInfoResponse'
+        "400":
+          description: Bad request
+          schema:
+            $ref: '#/definitions/main.GetBuyerInvoiceInfoResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get buyer invoice information
+      tags:
+      - Order
+  /api/v2/order/get_order_detail:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves detailed information about orders
+      parameters:
+      - description: Comma-separated list of order serial numbers
+        example: '"201214JAJXU6G7,201214JASXYXY6"'
+        in: query
+        name: order_sn_list
+        required: true
+        type: string
+      - description: Partner ID
+        example: 123456
+        format: int64
+        in: query
+        name: partner_id
+        required: true
+        type: integer
+      - description: Shop ID
+        example: 789012
+        format: int64
+        in: query
+        name: shop_id
+        type: integer
+      - description: Request timestamp
+        example: 1640995200
+        format: int64
+        in: query
+        name: timestamp
+        required: true
+        type: integer
+      - description: Access token
+        example: '"your_access_token"'
+        in: query
+        name: access_token
+        required: true
+        type: string
+      - description: Signature
+        example: '"ABCD1234567890EFGH"'
+        in: query
+        name: sign
+        required: true
+        type: string
+      - description: Request pending order status
+        example: true
+        in: query
+        name: request_order_status_pending
+        type: boolean
+      - description: Optional response fields
+        example: '"total_amount"'
+        in: query
+        name: response_optional_fields
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success response
+          schema:
+            $ref: '#/definitions/main.GetOrderDetailResponse'
+        "400":
+          description: Bad request
+          schema:
+            $ref: '#/definitions/main.GetOrderDetailResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get order details
+      tags:
+      - Order
+  /api/v2/product/get_item_base_info:
+    get:
+      consumes:
+      - application/json
+      description: Retrieves detailed information about products
+      parameters:
+      - description: Array of item IDs
+        example: '"[34001,34002]"'
+        in: query
+        name: item_id_list
+        required: true
+        type: string
+      - description: Include tax info in response
+        example: true
+        in: query
+        name: need_tax_info
+        type: boolean
+      - description: Include complaint policy in response
+        example: true
+        in: query
+        name: need_complaint_policy
+        type: boolean
+      - description: Partner ID
+        example: 123456
+        format: int64
+        in: query
+        name: partner_id
+        required: true
+        type: integer
+      - description: Shop ID
+        example: 789012
+        format: int64
+        in: query
+        name: shop_id
+        type: integer
+      - description: Request timestamp
+        example: 1640995200
+        format: int64
+        in: query
+        name: timestamp
+        required: true
+        type: integer
+      - description: Access token
+        example: '"your_access_token"'
+        in: query
+        name: access_token
+        required: true
+        type: string
+      - description: Signature
+        example: '"ABCD1234567890EFGH"'
+        in: query
+        name: sign
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Success response
+          schema:
+            $ref: '#/definitions/main.GetItemBaseInfoResponse'
+        "400":
+          description: Bad request
+          schema:
+            $ref: '#/definitions/main.GetItemBaseInfoResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Get item base information
+      tags:
+      - Product
+swagger: "2.0"
