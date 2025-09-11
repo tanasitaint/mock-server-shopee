@@ -218,7 +218,7 @@ definitions:
         example: ""
         type: string
       tax_id:
-        example: ""
+        example: "0745561010054"
         type: string
     type: object
   main.InvoiceInfo:
