@@ -611,7 +611,7 @@
                 },
                 "phone_number": {
                     "type": "string",
-                    "example": ""
+                    "example": "0886761062"
                 },
                 "tax_id": {
                     "type": "string",
