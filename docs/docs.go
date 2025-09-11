@@ -621,7 +621,7 @@ const docTemplate = `{
                 },
                 "tax_id": {
                     "type": "string",
-                    "example": ""
+                    "example": "0745561010054"
                 }
             }
         },
