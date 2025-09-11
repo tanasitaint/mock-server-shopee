@@ -639,7 +639,7 @@
                 },
                 "order_sn": {
                     "type": "string",
-                    "example": "2209160VNPKXF7"
+                    "example": "240314U0G6UNMN"
                 }
             }
         },
@@ -924,7 +924,7 @@
                 },
                 "order_sn": {
                     "type": "string",
-                    "example": "2404098R48U37H"
+                    "example": "240314U0G6UNMN"
                 },
                 "order_status": {
                     "type": "string",
@@ -1212,7 +1212,7 @@
             "properties": {
                 "order_sn": {
                     "type": "string",
-                    "example": "220314U0G6UNMN"
+                    "example": "240314U0G6UNMN"
                 }
             }
         },
