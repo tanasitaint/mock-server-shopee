@@ -235,7 +235,7 @@ definitions:
         example: false
         type: boolean
       order_sn:
-        example: 2209160VNPKXF7
+        example: 240314U0G6UNMN
         type: string
     type: object
   main.ItemDetail:
@@ -438,7 +438,7 @@ definitions:
         example: 0
         type: integer
       order_sn:
-        example: 2404098R48U37H
+        example: 240314U0G6UNMN
         type: string
       order_status:
         example: COMPLETED
@@ -647,7 +647,7 @@ definitions:
   main.QueryItem:
     properties:
       order_sn:
-        example: 220314U0G6UNMN
+        example: 240314U0G6UNMN
         type: string
     type: object
   main.RecipientAddress:
