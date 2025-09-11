@@ -73,7 +73,7 @@ type InvoiceDetail struct {
 	Email            string           `json:"email" example:"testing.just@op.pl"`
 	Address          string           `json:"address" example:"Ordona 7B Warszawa, Warszawa, 01237"`
 	PhoneNumber      string           `json:"phone_number" example:""`
-	TaxID            string           `json:"tax_id" example:""`
+	TaxID            string           `json:"tax_id" example:"0745561010054"`
 	AddressBreakdown AddressBreakdown `json:"address_breakdown"`
 }
 
@@ -427,7 +427,7 @@ func getBuyerInvoiceInfo(c *fiber.Ctx) error {
 					Email:       "testing.just@op.pl",
 					Address:     "Ordona 7B Warszawa, Warszawa, 01237",
 					PhoneNumber: "",
-					TaxID:       "",
+					TaxID:       "0745561010054",
 					AddressBreakdown: AddressBreakdown{
 						Region:          "Poland",
 						State:           "",
