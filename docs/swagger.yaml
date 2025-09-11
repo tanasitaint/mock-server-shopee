@@ -215,7 +215,7 @@ definitions:
         example: Kevin Yap
         type: string
       phone_number:
-        example: ""
+        example: "0886761062"
         type: string
       tax_id:
         example: "0745561010054"
