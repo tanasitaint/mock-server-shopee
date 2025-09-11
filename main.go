@@ -72,7 +72,7 @@ type InvoiceDetail struct {
 	Name             string           `json:"name" example:"Kevin Yap"`
 	Email            string           `json:"email" example:"testing.just@op.pl"`
 	Address          string           `json:"address" example:"Ordona 7B Warszawa, Warszawa, 01237"`
-	PhoneNumber      string           `json:"phone_number" example:""`
+	PhoneNumber      string           `json:"phone_number" example:"0886761062"`
 	TaxID            string           `json:"tax_id" example:"0745561010054"`
 	AddressBreakdown AddressBreakdown `json:"address_breakdown"`
 }
