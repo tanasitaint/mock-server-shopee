@@ -103,7 +103,7 @@ type OrderItem struct {
 	IsB2COwnedItem           bool        `json:"is_b2c_owned_item" example:"false"`
 	IsPrescriptionItem       bool        `json:"is_prescription_item" example:"false"`
 	ItemID                   int64       `json:"item_id" example:"23620853561"`
-	ItemName                 string      `json:"item_name" example:"🦋giảm giá🦋Kem nở ngực SADOER enlarging breast cream"`
+	ItemName                 string      `json:"item_name" example:"Minecraft NFA"`
 	ItemSKU                  string      `json:"item_sku" example:""`
 	MainItem                 bool        `json:"main_item" example:"false"`
 	ModelDiscountedPrice     int64       `json:"model_discounted_price" example:"48000"`
