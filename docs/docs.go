@@ -971,7 +971,7 @@ const docTemplate = `{
                 },
                 "shipping_carrier": {
                     "type": "string",
-                    "example": "Giao Hàng Nhanh"
+                    "example": "Thunder Express"
                 },
                 "split_up": {
                     "type": "boolean",
@@ -1227,15 +1227,15 @@ const docTemplate = `{
             "properties": {
                 "city": {
                     "type": "string",
-                    "example": "Huyện Phước Long"
+                    "example": "มะกอก"
                 },
                 "district": {
                     "type": "string",
-                    "example": "Xã Phong Thạnh Tây B"
+                    "example": "แม่แรง"
                 },
                 "full_address": {
                     "type": "string",
-                    "example": "Ấp******"
+                    "example": "บ้าน******"
                 },
                 "name": {
                     "type": "string",

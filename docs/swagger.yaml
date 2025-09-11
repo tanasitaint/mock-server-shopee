@@ -37,13 +37,13 @@ definitions:
         type: integer
       attribute_value_list:
         items:
-          $ref: '#/definitions/main.AttributeValue'
+          $ref: "#/definitions/main.AttributeValue"
         type: array
       is_mandatory:
         example: true
         type: boolean
       original_attribute_name:
-        example: 'Brand: L2 Default [14644]'
+        example: "Brand: L2 Default [14644]"
         type: string
     type: object
   main.AttributeValue:
@@ -70,7 +70,7 @@ definitions:
   main.ComplaintPolicy:
     properties:
       additional_information:
-        example: '-'
+        example: "-"
         type: string
       complaint_address_id:
         example: 0
@@ -85,27 +85,27 @@ definitions:
   main.DescriptionField:
     properties:
       field_type:
-        example: '-'
+        example: "-"
         type: string
       image_info:
-        $ref: '#/definitions/main.DescriptionFieldImage'
+        $ref: "#/definitions/main.DescriptionFieldImage"
       text:
-        example: '-'
+        example: "-"
         type: string
     type: object
   main.DescriptionFieldImage:
     properties:
       image_id:
-        example: '-'
+        example: "-"
         type: string
       image_url:
-        example: '-'
+        example: "-"
         type: string
     type: object
   main.DescriptionInfo:
     properties:
       extended_description:
-        $ref: '#/definitions/main.ExtendedDescription'
+        $ref: "#/definitions/main.ExtendedDescription"
     type: object
   main.Dimension:
     properties:
@@ -123,7 +123,7 @@ definitions:
     properties:
       field_list:
         items:
-          $ref: '#/definitions/main.DescriptionField'
+          $ref: "#/definitions/main.DescriptionField"
         type: array
     type: object
   main.GetBuyerInvoiceInfoRequest:
@@ -136,7 +136,7 @@ definitions:
         type: integer
       queries:
         items:
-          $ref: '#/definitions/main.QueryItem'
+          $ref: "#/definitions/main.QueryItem"
         type: array
       shop_id:
         example: 789012
@@ -155,7 +155,7 @@ definitions:
         type: string
       invoice_info_list:
         items:
-          $ref: '#/definitions/main.InvoiceInfo'
+          $ref: "#/definitions/main.InvoiceInfo"
         type: array
       message:
         example: ""
@@ -167,18 +167,18 @@ definitions:
   main.GetItemBaseInfoResponse:
     properties:
       error:
-        example: '-'
+        example: "-"
         type: string
       message:
-        example: '-'
+        example: "-"
         type: string
       request_id:
         example: 7b9da0c6926642199c33ee9dd3a266f5
         type: string
       response:
-        $ref: '#/definitions/main.ItemListResponse'
+        $ref: "#/definitions/main.ItemListResponse"
       warning:
-        example: '-'
+        example: "-"
         type: string
     type: object
   main.GetOrderDetailResponse:
@@ -193,7 +193,7 @@ definitions:
         example: 023c50ace933ba38473a5fb2a7dc8821
         type: string
       response:
-        $ref: '#/definitions/main.OrderListResponse'
+        $ref: "#/definitions/main.OrderListResponse"
     type: object
   main.ImageInfo:
     properties:
@@ -207,7 +207,7 @@ definitions:
         example: Ordona 7B Warszawa, Warszawa, 01237
         type: string
       address_breakdown:
-        $ref: '#/definitions/main.AddressBreakdown'
+        $ref: "#/definitions/main.AddressBreakdown"
       email:
         example: testing.just@op.pl
         type: string
@@ -227,7 +227,7 @@ definitions:
         example: ""
         type: string
       invoice_detail:
-        $ref: '#/definitions/main.InvoiceDetail'
+        $ref: "#/definitions/main.InvoiceDetail"
       invoice_type:
         example: personal
         type: string
@@ -242,15 +242,15 @@ definitions:
     properties:
       attribute_list:
         items:
-          $ref: '#/definitions/main.Attribute'
+          $ref: "#/definitions/main.Attribute"
         type: array
       brand:
-        $ref: '#/definitions/main.Brand'
+        $ref: "#/definitions/main.Brand"
       category_id:
         example: 14646
         type: integer
       complaint_policy:
-        $ref: '#/definitions/main.ComplaintPolicy'
+        $ref: "#/definitions/main.ComplaintPolicy"
       condition:
         example: NEW/USED
         type: string
@@ -264,17 +264,17 @@ definitions:
         example: first product 001first product
         type: string
       description_info:
-        $ref: '#/definitions/main.DescriptionInfo'
+        $ref: "#/definitions/main.DescriptionInfo"
       description_type:
-        example: '-'
+        example: "-"
         type: string
       dimension:
-        $ref: '#/definitions/main.Dimension'
+        $ref: "#/definitions/main.Dimension"
       has_model:
         example: true
         type: boolean
       image:
-        $ref: '#/definitions/main.ItemImage'
+        $ref: "#/definitions/main.ItemImage"
       item_dangerous:
         example: 0
         type: integer
@@ -285,57 +285,57 @@ definitions:
         example: seller discount
         type: string
       item_sku:
-        example: '-'
+        example: "-"
         type: string
       item_status:
         example: NORMAL
         type: string
       logistic_info:
         items:
-          $ref: '#/definitions/main.LogisticInfo'
+          $ref: "#/definitions/main.LogisticInfo"
         type: array
       pre_order:
-        $ref: '#/definitions/main.PreOrder'
+        $ref: "#/definitions/main.PreOrder"
       price_info:
         items:
-          $ref: '#/definitions/main.PriceInfo'
+          $ref: "#/definitions/main.PriceInfo"
         type: array
       promotion_id:
         example: 13123
         type: integer
       size_chart:
-        example: '-'
+        example: "-"
         type: string
       stock_info_v2:
-        $ref: '#/definitions/main.StockInfoV2'
+        $ref: "#/definitions/main.StockInfoV2"
       tax_info:
-        $ref: '#/definitions/main.TaxInfo'
+        $ref: "#/definitions/main.TaxInfo"
       update_time:
         example: 1600572640
         type: integer
       video_info:
         items:
-          $ref: '#/definitions/main.VideoInfo'
+          $ref: "#/definitions/main.VideoInfo"
         type: array
       weight:
         example: "10.02"
         type: string
       wholesales:
         items:
-          $ref: '#/definitions/main.Wholesale'
+          $ref: "#/definitions/main.Wholesale"
         type: array
     type: object
   main.ItemImage:
     properties:
       image_id_list:
         example:
-        - '-'
+          - "-"
         items:
           type: string
         type: array
       image_url_list:
         example:
-        - '-'
+          - "-"
         items:
           type: string
         type: array
@@ -344,7 +344,7 @@ definitions:
     properties:
       item_list:
         items:
-          $ref: '#/definitions/main.ItemDetail'
+          $ref: "#/definitions/main.ItemDetail"
         type: array
     type: object
   main.LogisticInfo:
@@ -362,7 +362,7 @@ definitions:
         example: 80012
         type: integer
       logistic_name:
-        example: '-'
+        example: "-"
         type: string
       shipping_fee:
         example: 5.02
@@ -426,7 +426,7 @@ definitions:
         type: string
       item_list:
         items:
-          $ref: '#/definitions/main.OrderItem'
+          $ref: "#/definitions/main.OrderItem"
         type: array
       message_to_seller:
         example: ""
@@ -445,7 +445,7 @@ definitions:
         type: string
       package_list:
         items:
-          $ref: '#/definitions/main.PackageDetail'
+          $ref: "#/definitions/main.PackageDetail"
         type: array
       pay_time:
         example: 1712817766
@@ -457,7 +457,7 @@ definitions:
         example: 1712726577
         type: integer
       recipient_address:
-        $ref: '#/definitions/main.RecipientAddress'
+        $ref: "#/definitions/main.RecipientAddress"
       region:
         example: VN
         type: string
@@ -468,7 +468,7 @@ definitions:
         example: 1712671200
         type: integer
       shipping_carrier:
-        example: Giao Hàng Nhanh
+        example: Thunder Express
         type: string
       split_up:
         example: false
@@ -489,7 +489,7 @@ definitions:
         example: 0
         type: integer
       image_info:
-        $ref: '#/definitions/main.ImageInfo'
+        $ref: "#/definitions/main.ImageInfo"
       is_b2c_owned_item:
         example: false
         type: boolean
@@ -531,7 +531,7 @@ definitions:
         type: integer
       product_location_id:
         example:
-        - VN10XX2UZ
+          - VN10XX2UZ
         items:
           type: string
         type: array
@@ -555,7 +555,7 @@ definitions:
     properties:
       order_list:
         items:
-          $ref: '#/definitions/main.OrderDetail'
+          $ref: "#/definitions/main.OrderDetail"
         type: array
     type: object
   main.PackageDetail:
@@ -568,7 +568,7 @@ definitions:
         type: string
       item_list:
         items:
-          $ref: '#/definitions/main.PackageItemDetail'
+          $ref: "#/definitions/main.PackageItemDetail"
         type: array
       logistics_channel_id:
         example: 18080
@@ -652,19 +652,19 @@ definitions:
   main.RecipientAddress:
     properties:
       city:
-        example: Huyện Phước Long
+        example: มะกอก
         type: string
       district:
-        example: Xã Phong Thạnh Tây B
+        example: แม่แรง
         type: string
       full_address:
-        example: Ấp******
+        example: บ้าน******
         type: string
       name:
         example: P******n
         type: string
       phone:
-        example: '******64'
+        example: "******64"
         type: string
       region:
         example: VN
@@ -683,19 +683,19 @@ definitions:
     properties:
       seller_stock:
         items:
-          $ref: '#/definitions/main.StockLocation'
+          $ref: "#/definitions/main.StockLocation"
         type: array
       shopee_stock:
         items:
-          $ref: '#/definitions/main.StockLocation'
+          $ref: "#/definitions/main.StockLocation"
         type: array
       summary_info:
-        $ref: '#/definitions/main.SummaryInfo'
+        $ref: "#/definitions/main.SummaryInfo"
     type: object
   main.StockLocation:
     properties:
       location_id:
-        example: '-'
+        example: "-"
         type: string
       stock:
         example: 10
@@ -713,34 +713,34 @@ definitions:
   main.TaxInfo:
     properties:
       cest:
-        example: '-'
+        example: "-"
         type: string
       csosn:
-        example: '-'
+        example: "-"
         type: string
       diff_state_cfop:
-        example: '-'
+        example: "-"
         type: string
       hs_code:
-        example: '-'
+        example: "-"
         type: string
       invoice_option:
-        example: '-'
+        example: "-"
         type: string
       measure_unit:
-        example: '-'
+        example: "-"
         type: string
       ncm:
-        example: '-'
+        example: "-"
         type: string
       origin:
-        example: '-'
+        example: "-"
         type: string
       tax_code:
-        example: '-'
+        example: "-"
         type: string
       vat_rate:
-        example: '-'
+        example: "-"
         type: string
     type: object
   main.VideoInfo:
@@ -749,10 +749,10 @@ definitions:
         example: 0
         type: integer
       thumbnail_url:
-        example: '-'
+        example: "-"
         type: string
       video_url:
-        example: '-'
+        example: "-"
         type: string
     type: object
   main.Wholesale:
@@ -780,58 +780,58 @@ paths:
   /api/v2/order/get_buyer_invoice_info:
     post:
       consumes:
-      - application/json
+        - application/json
       description: Retrieves buyer invoice information for a specific order
       parameters:
-      - description: Partner ID
-        example: 123456
-        format: int64
-        in: query
-        name: partner_id
-        required: true
-        type: integer
-      - description: Shop ID
-        example: 789012
-        format: int64
-        in: query
-        name: shop_id
-        type: integer
-      - description: Request timestamp
-        example: 1640995200
-        format: int64
-        in: query
-        name: timestamp
-        required: true
-        type: integer
-      - description: Access token
-        example: '"your_access_token"'
-        in: query
-        name: access_token
-        required: true
-        type: string
-      - description: Signature
-        example: '"ABCD1234567890EFGH"'
-        in: query
-        name: sign
-        required: true
-        type: string
-      - description: Request body with queries array
-        in: body
-        name: request
-        required: true
-        schema:
-          $ref: '#/definitions/main.GetBuyerInvoiceInfoRequest'
+        - description: Partner ID
+          example: 123456
+          format: int64
+          in: query
+          name: partner_id
+          required: true
+          type: integer
+        - description: Shop ID
+          example: 789012
+          format: int64
+          in: query
+          name: shop_id
+          type: integer
+        - description: Request timestamp
+          example: 1640995200
+          format: int64
+          in: query
+          name: timestamp
+          required: true
+          type: integer
+        - description: Access token
+          example: '"your_access_token"'
+          in: query
+          name: access_token
+          required: true
+          type: string
+        - description: Signature
+          example: '"ABCD1234567890EFGH"'
+          in: query
+          name: sign
+          required: true
+          type: string
+        - description: Request body with queries array
+          in: body
+          name: request
+          required: true
+          schema:
+            $ref: "#/definitions/main.GetBuyerInvoiceInfoRequest"
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Success response
           schema:
-            $ref: '#/definitions/main.GetBuyerInvoiceInfoResponse'
+            $ref: "#/definitions/main.GetBuyerInvoiceInfoResponse"
         "400":
           description: Bad request
           schema:
-            $ref: '#/definitions/main.GetBuyerInvoiceInfoResponse'
+            $ref: "#/definitions/main.GetBuyerInvoiceInfoResponse"
         "401":
           description: Unauthorized
           schema:
@@ -839,72 +839,72 @@ paths:
             type: object
       summary: Get buyer invoice information
       tags:
-      - Order
+        - Order
   /api/v2/order/get_order_detail:
     get:
       consumes:
-      - application/json
+        - application/json
       description: Retrieves detailed information about orders
       parameters:
-      - description: Comma-separated list of order serial numbers
-        example: '"201214JAJXU6G7,201214JASXYXY6"'
-        in: query
-        name: order_sn_list
-        required: true
-        type: string
-      - description: Partner ID
-        example: 123456
-        format: int64
-        in: query
-        name: partner_id
-        required: true
-        type: integer
-      - description: Shop ID
-        example: 789012
-        format: int64
-        in: query
-        name: shop_id
-        type: integer
-      - description: Request timestamp
-        example: 1640995200
-        format: int64
-        in: query
-        name: timestamp
-        required: true
-        type: integer
-      - description: Access token
-        example: '"your_access_token"'
-        in: query
-        name: access_token
-        required: true
-        type: string
-      - description: Signature
-        example: '"ABCD1234567890EFGH"'
-        in: query
-        name: sign
-        required: true
-        type: string
-      - description: Request pending order status
-        example: true
-        in: query
-        name: request_order_status_pending
-        type: boolean
-      - description: Optional response fields
-        example: '"total_amount"'
-        in: query
-        name: response_optional_fields
-        type: string
+        - description: Comma-separated list of order serial numbers
+          example: '"201214JAJXU6G7,201214JASXYXY6"'
+          in: query
+          name: order_sn_list
+          required: true
+          type: string
+        - description: Partner ID
+          example: 123456
+          format: int64
+          in: query
+          name: partner_id
+          required: true
+          type: integer
+        - description: Shop ID
+          example: 789012
+          format: int64
+          in: query
+          name: shop_id
+          type: integer
+        - description: Request timestamp
+          example: 1640995200
+          format: int64
+          in: query
+          name: timestamp
+          required: true
+          type: integer
+        - description: Access token
+          example: '"your_access_token"'
+          in: query
+          name: access_token
+          required: true
+          type: string
+        - description: Signature
+          example: '"ABCD1234567890EFGH"'
+          in: query
+          name: sign
+          required: true
+          type: string
+        - description: Request pending order status
+          example: true
+          in: query
+          name: request_order_status_pending
+          type: boolean
+        - description: Optional response fields
+          example: '"total_amount"'
+          in: query
+          name: response_optional_fields
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Success response
           schema:
-            $ref: '#/definitions/main.GetOrderDetailResponse'
+            $ref: "#/definitions/main.GetOrderDetailResponse"
         "400":
           description: Bad request
           schema:
-            $ref: '#/definitions/main.GetOrderDetailResponse'
+            $ref: "#/definitions/main.GetOrderDetailResponse"
         "401":
           description: Unauthorized
           schema:
@@ -912,72 +912,72 @@ paths:
             type: object
       summary: Get order details
       tags:
-      - Order
+        - Order
   /api/v2/product/get_item_base_info:
     get:
       consumes:
-      - application/json
+        - application/json
       description: Retrieves detailed information about products
       parameters:
-      - description: Array of item IDs
-        example: '"[34001,34002]"'
-        in: query
-        name: item_id_list
-        required: true
-        type: string
-      - description: Include tax info in response
-        example: true
-        in: query
-        name: need_tax_info
-        type: boolean
-      - description: Include complaint policy in response
-        example: true
-        in: query
-        name: need_complaint_policy
-        type: boolean
-      - description: Partner ID
-        example: 123456
-        format: int64
-        in: query
-        name: partner_id
-        required: true
-        type: integer
-      - description: Shop ID
-        example: 789012
-        format: int64
-        in: query
-        name: shop_id
-        type: integer
-      - description: Request timestamp
-        example: 1640995200
-        format: int64
-        in: query
-        name: timestamp
-        required: true
-        type: integer
-      - description: Access token
-        example: '"your_access_token"'
-        in: query
-        name: access_token
-        required: true
-        type: string
-      - description: Signature
-        example: '"ABCD1234567890EFGH"'
-        in: query
-        name: sign
-        required: true
-        type: string
+        - description: Array of item IDs
+          example: '"[34001,34002]"'
+          in: query
+          name: item_id_list
+          required: true
+          type: string
+        - description: Include tax info in response
+          example: true
+          in: query
+          name: need_tax_info
+          type: boolean
+        - description: Include complaint policy in response
+          example: true
+          in: query
+          name: need_complaint_policy
+          type: boolean
+        - description: Partner ID
+          example: 123456
+          format: int64
+          in: query
+          name: partner_id
+          required: true
+          type: integer
+        - description: Shop ID
+          example: 789012
+          format: int64
+          in: query
+          name: shop_id
+          type: integer
+        - description: Request timestamp
+          example: 1640995200
+          format: int64
+          in: query
+          name: timestamp
+          required: true
+          type: integer
+        - description: Access token
+          example: '"your_access_token"'
+          in: query
+          name: access_token
+          required: true
+          type: string
+        - description: Signature
+          example: '"ABCD1234567890EFGH"'
+          in: query
+          name: sign
+          required: true
+          type: string
       produces:
-      - application/json
+        - application/json
       responses:
         "200":
           description: Success response
           schema:
-            $ref: '#/definitions/main.GetItemBaseInfoResponse'
+            $ref: "#/definitions/main.GetItemBaseInfoResponse"
         "400":
           description: Bad request
           schema:
-            $ref: '#/definitions/main.GetItemBaseInfoResponse'
+            $ref: "#/definitions/main.GetItemBaseInfoResponse"
         "401":
           description: Unauthorized
           schema:
@@ -985,5 +985,5 @@ paths:
             type: object
       summary: Get item base information
       tags:
-      - Product
+        - Product
 swagger: "2.0"

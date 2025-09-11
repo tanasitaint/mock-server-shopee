@@ -143,9 +143,9 @@ type PackageDetail struct {
 }
 
 type RecipientAddress struct {
-	City        string `json:"city" example:"Huyện Phước Long"`
-	District    string `json:"district" example:"Xã Phong Thạnh Tây B"`
-	FullAddress string `json:"full_address" example:"Ấp******"`
+	City        string `json:"city" example:"มะกอก"`
+	District    string `json:"district" example:"แม่แรง"`
+	FullAddress string `json:"full_address" example:"บ้าน******"`
 	Name        string `json:"name" example:"P******n"`
 	Phone       string `json:"phone" example:"******64"`
 	Region      string `json:"region" example:"VN"`
@@ -186,7 +186,7 @@ type OrderDetail struct {
 	Region                     string            `json:"region" example:"VN"`
 	ReverseShippingFee         int64             `json:"reverse_shipping_fee" example:"0"`
 	ShipByDate                 int64             `json:"ship_by_date" example:"1712671200"`
-	ShippingCarrier            string            `json:"shipping_carrier" example:"Giao Hàng Nhanh"`
+	ShippingCarrier            string            `json:"shipping_carrier" example:"Thunder Express"`
 	SplitUp                    bool              `json:"split_up" example:"false"`
 	TotalAmount                int64             `json:"total_amount" example:"32119"`
 	UpdateTime                 int64             `json:"update_time" example:"1713139948"`
@@ -569,9 +569,9 @@ func getOrderDetail(c *fiber.Ctx) error {
 			PaymentMethod:  "Cash on Delivery",
 			PickupDoneTime: 1712726577,
 			RecipientAddress: RecipientAddress{
-				City:        "Huyện Phước Long",
-				District:    "Xã Phong Thạnh Tây B",
-				FullAddress: "Ấp******",
+				City:        "มะกอก",
+				District:    "แม่แรง",
+				FullAddress: "บ้าน******",
 				Name:        "P******n",
 				Phone:       "******64",
 				Region:      "VN",
@@ -582,7 +582,7 @@ func getOrderDetail(c *fiber.Ctx) error {
 			Region:             "VN",
 			ReverseShippingFee: 0,
 			ShipByDate:         1712671200,
-			ShippingCarrier:    "Giao Hàng Nhanh",
+			ShippingCarrier:    "Thunder Express",
 			SplitUp:            false,
 			TotalAmount:        32119,
 			UpdateTime:         1713139948,
