@@ -530,7 +530,7 @@ func getOrderDetail(c *fiber.Ctx) error {
 					ModelQuantityPurchased: 1,
 					ModelSKU:           "QAZ05",
 					OrderItemID:        10416502727,
-					ProductLocationID:  "THZ",
+					ProductLocationID:  []string{"THZ"},
 					PromotionGroupID:   0,
 					PromotionID:        0,
 					PromotionType:      "flash_sale",
